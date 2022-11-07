@@ -1,1 +1,1 @@
-{"version":3,"file":"LinkedList.js","sourceRoot":"","sources":["../src/LinkedList.ts"],"names":[],"mappings":""}
+{"version":3,"file":"LinkedList.js","sourceRoot":"","sources":["../src/LinkedList.ts"],"names":[],"mappings":";;;AAcA,MAAM,IAAI;IACN,YACY,SAAiB,CAAC,EAClB,QAAqB,IAAI;QADzB,WAAM,GAAN,MAAM,CAAY;QAClB,UAAK,GAAL,KAAK,CAAoB;IAErC,CAAC;CACJ;AAED,MAAM,UAAU;IACZ,YACY,SAAe,IAAI,IAAI,EAAE,EACzB,QAAqB,IAAI;QADzB,WAAM,GAAN,MAAM,CAAmB;QACzB,UAAK,GAAL,KAAK,CAAoB;IAErC,CAAC;CACJ;AAGG,gCAAU"}

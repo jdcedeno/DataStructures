@@ -1,6 +1,6 @@
 "use strict";
-let age = 29;
-if (age < 50)
-    age += 10;
-console.log(age);
+Object.defineProperty(exports, "__esModule", { value: true });
+const LinkedList_1 = require("./LinkedList");
+let myList = new LinkedList_1.LinkedList();
+console.log(myList);
 //# sourceMappingURL=index.js.map
