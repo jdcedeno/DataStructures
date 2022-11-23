@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const LinkedList_1 = require("./LinkedList");
-let myList = new LinkedList_1.LinkedList();
+import { LinkedList } from "./LinkedList/LinkedList.js";
+let myList = new LinkedList();
 console.log(myList);
 //# sourceMappingURL=index.js.map
