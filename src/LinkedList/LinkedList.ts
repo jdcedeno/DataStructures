@@ -1,4 +1,4 @@
-import { ListNode } from "./ListNode.js";
+import { ListNode } from "./ListNode";
 
 export class LinkedList {
     private _first: ListNode | null;
