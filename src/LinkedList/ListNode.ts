@@ -1,5 +1,5 @@
-export class Node {
-    private _next: Node | null;
+export class ListNode {
+    private _next: ListNode | null;
 
     constructor(
         private _value: number = 0
@@ -7,12 +7,12 @@ export class Node {
         this._next = null;
     }
 
-    get next(): Node | null {
+    get next(): ListNode | null {
         return this._next;
     }
 
-    set next(node: Node | null) {
-        this._next = node;
+    set next(listNode: ListNode | null) {
+        this._next = listNode;
         return;
     }
 

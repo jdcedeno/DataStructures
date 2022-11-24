@@ -1,8 +1,8 @@
-import { Node } from "./Node.js";
+import { ListNode } from "./ListNode.js";
 
 export class LinkedList {
-    private _first: Node | null;
-    private _last: Node | null;
+    private _first: ListNode | null;
+    private _last: ListNode | null;
     private _size: number;
 
     constructor(val?: number | null) {
@@ -10,25 +10,25 @@ export class LinkedList {
             this._first = this._last = null;
             this._size = 0;
         } else {
-            this._first = this._last = new Node(val);
+            this._first = this._last = new ListNode(val);
             this._size = 1;
         }
     }
 
-    get first(): Node | null {
+    get first(): ListNode | null {
         return this._first;
     }
 
-    get last(): Node | null {
+    get last(): ListNode | null {
         return this._last;
     }
 
     addFirst(val: number): void {
         if (this.isEmpty()) {
-            this._first = this._last = new Node(val);
+            this._first = this._last = new ListNode(val);
             this._size++;
         } else {
-            let newFirst = new Node(val);
+            let newFirst = new ListNode(val);
             newFirst.next = this._first;
             this._first = newFirst;
             this._size++;
@@ -39,10 +39,10 @@ export class LinkedList {
 
     addLast(val: number): void {
         if (this.isEmpty()) {
-            this._first = this._last = new Node(val);
+            this._first = this._last = new ListNode(val);
             this._size++;
         } else {
-            this._last!.next = this._last = new Node(val);
+            this._last!.next = this._last = new ListNode(val);
             this._size++;
         }
 
@@ -83,20 +83,20 @@ export class LinkedList {
             return;
         
         if (this.isEmpty()) {
-            this._first = this._last = new Node(val);
+            this._first = this._last = new ListNode(val);
             this._size++;
             return;
         }
 
         let currentNode = this._first;
         if (currentNode!.next === null) {
-            currentNode!.next = this._last = new Node(val);
+            currentNode!.next = this._last = new ListNode(val);
             this._size++;
             return;
         }
 
         if (index === 0) {
-            let newNode = new Node(val);
+            let newNode = new ListNode(val);
             this._first = newNode;
             this._first.next = currentNode;
             this._size++;
@@ -106,7 +106,7 @@ export class LinkedList {
         let currentIndex = 0;
         while (currentNode !== null) {
             if (currentIndex + 1 === index) {
-                let newNode = new Node(val);
+                let newNode = new ListNode(val);
                 let newNodeNext = currentNode.next;
                 currentNode.next = newNode;
                 newNode.next = newNodeNext;
