@@ -1,100 +1,84 @@
 import { ListNode } from "./ListNode.js";
-
 export class LinkedList {
-    private _first: ListNode | null;
-    private _last: ListNode | null;
-    private _size: number;
-
-    constructor(val?: number | null) {
+    constructor(val) {
         if (val == null) {
             this._first = this._last = null;
             this._size = 0;
-        } else {
+        }
+        else {
             this._first = this._last = new ListNode(val);
             this._size = 1;
         }
     }
-
-    get first(): ListNode | null {
+    get first() {
         return this._first;
     }
-
-    get last(): ListNode | null {
+    get last() {
         return this._last;
     }
-
-    addFirst(val: number): void {
+    addFirst(val) {
         if (this.isEmpty()) {
             this._first = this._last = new ListNode(val);
             this._size++;
-        } else {
+        }
+        else {
             let newFirst = new ListNode(val);
             newFirst.next = this._first;
             this._first = newFirst;
             this._size++;
         }
-
         return;
     }
-
-    addLast(val: number): void {
+    addLast(val) {
         if (this.isEmpty()) {
             this._first = this._last = new ListNode(val);
             this._size++;
-        } else {
-            this._last!.next = this._last = new ListNode(val);
+        }
+        else {
+            this._last.next = this._last = new ListNode(val);
             this._size++;
         }
-
         return;
     }
-
-    clear(): void {
+    clear() {
         this._first = null;
         this._last = null;
         this._size = 0;
         return;
     }
-
-    contains(val: number): Boolean {
-        return this.indexOf(val) == -1 ? false: true;
+    contains(val) {
+        return this.indexOf(val) == -1 ? false : true;
     }
-
-    indexOf(val: number): number {
+    indexOf(val) {
         if (this.isEmpty())
             return -1;
-        
         let index = 0;
         let currentNode = this._first;
         while (currentNode !== null) {
             if (currentNode.value === val) {
                 return index;
-            } else {
+            }
+            else {
                 currentNode = currentNode.next;
                 index++;
             }
         }
-
         return -1;
     }
-
-    insert(val: number, index: number): void {
+    insert(val, index) {
         if (!Number.isInteger(index) || index < 0 || index > this._size)
             return;
-        
         if (this.isEmpty()) {
             this._first = this._last = new ListNode(val);
             this._size++;
             return;
         }
-
         let currentNode = this._first;
-        if (currentNode!.next === null) {
-            currentNode!.next = this._last = new ListNode(val);
+        if (currentNode.next === null) {
+            currentNode.next = this._last = new ListNode(val);
             this._size++;
             return;
         }
-
         if (index === 0) {
             let newNode = new ListNode(val);
             this._first = newNode;
@@ -102,7 +86,6 @@ export class LinkedList {
             this._size++;
             return;
         }
-
         let currentIndex = 0;
         while (currentNode !== null) {
             if (currentIndex + 1 === index) {
@@ -117,36 +100,27 @@ export class LinkedList {
             currentIndex++;
         }
     }
-
-    isEmpty(): Boolean {
+    isEmpty() {
         return this._first === null;
     }
-
-    removeFirst(): void {
+    removeFirst() {
         if (this.isEmpty())
             return;
-        
-        this._first = this._first!.next;
+        this._first = this._first.next;
         this._size--;
-
         if (this._first === null)
             this.clear();
-
         return;
     }
-
-    removeLast(): void {
+    removeLast() {
         if (this.isEmpty())
             return;
-
-        let previousNode = this._first!;
-        let currentNode = this._first!.next;
-
+        let previousNode = this._first;
+        let currentNode = this._first.next;
         if (currentNode === null) {
             this.clear();
             return;
         }
-
         while (currentNode !== null) {
             if (currentNode.next === null) {
                 previousNode.next = null;
@@ -154,30 +128,24 @@ export class LinkedList {
                 this._size--;
                 return;
             }
-
-            previousNode = previousNode.next!;
+            previousNode = previousNode.next;
             currentNode = currentNode.next;
         }
-
         return;
     }
-
-    get size(): number {
+    get size() {
         return this._size;
     }
-
-    toArray(): Array<number> {
-        let list = new Array<number>;
-
+    toArray() {
+        let list = new Array;
         if (this.isEmpty())
             return list;
-
         let currentNode = this._first;
         while (currentNode !== null) {
             list.push(currentNode.value);
             currentNode = currentNode.next;
         }
-
         return list;
     }
 }
+//# sourceMappingURL=LinkedList.js.map

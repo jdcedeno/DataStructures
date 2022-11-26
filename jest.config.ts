@@ -3,5 +3,11 @@ export default {
   preset: 'ts-jest',
   testEnvironment: 'node',
   extensionsToTreatAsEsm: ['.ts'],
-  transform: {},
+  testMatch: [
+    "<rootDir>/dist/tests/**/*.test.js"
+  ],
+  transform: {
+    "^.+\\.(ts|tsx)?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest"
+  }
 };

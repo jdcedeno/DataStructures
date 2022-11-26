@@ -1,5 +1,4 @@
 import { LinkedList } from "../src/LinkedList/LinkedList.js";
-
 describe("LinkedList", () => {
     it("Creates an empty linked list when no argument is given", () => {
         let result = new LinkedList();
@@ -10,3 +9,4 @@ describe("LinkedList", () => {
         });
     });
 });
+//# sourceMappingURL=LinkedList.test.js.map
