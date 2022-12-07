@@ -4,10 +4,10 @@ export default {
   testEnvironment: 'node',
   extensionsToTreatAsEsm: ['.ts'],
   testMatch: [
-    "<rootDir>/dist/tests/**/*.test.js"
+    "<rootDir>/dist/**/*.test.js"
   ],
   transform: {
     "^.+\\.(ts|tsx)?$": "ts-jest",
-    "^.+\\.(js|jsx)$": "babel-jest"
+    "^.+\\.(js|jsx)$": "babel-jest",
   }
 };

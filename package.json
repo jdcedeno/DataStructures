@@ -4,8 +4,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "tsc && node \"dist/src/index.js\"",
-    "test": "jest --watch"
+    "clean": "del-cli dist",
+    "start": "del-cli dist && tsc -p tsconfig.build.json && node \"dist/index.js\"",
+    "test": "del-cli dist && tsc && jest --watch"
   },
   "repository": {
     "type": "git",

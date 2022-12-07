@@ -1,4 +1,4 @@
-import { LinkedList } from "../src/LinkedList/LinkedList.js";
+import { LinkedList } from "./LinkedList.js";
 
 describe("LinkedList", () => {
     it("Creates an empty linked list when no argument is given", () => {
