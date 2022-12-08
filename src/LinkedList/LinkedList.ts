@@ -82,27 +82,17 @@ export class LinkedList {
         if (!Number.isInteger(index) || index < 0 || index > this._size)
             return;
         
-        if (this.isEmpty()) {
-            this._first = this._last = new ListNode(val);
-            this._size++;
+        if (this.isEmpty() || index === 0) {
+            this.addFirst(val);
+            return;
+        }
+
+        if (index === this._size) {
+            this.addLast(val);
             return;
         }
 
         let currentNode = this._first;
-        if (currentNode!.next === null) {
-            currentNode!.next = this._last = new ListNode(val);
-            this._size++;
-            return;
-        }
-
-        if (index === 0) {
-            let newNode = new ListNode(val);
-            this._first = newNode;
-            this._first.next = currentNode;
-            this._size++;
-            return;
-        }
-
         let currentIndex = 0;
         while (currentNode !== null) {
             if (currentIndex + 1 === index) {
