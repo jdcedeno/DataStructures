@@ -174,7 +174,6 @@ describe("LinkedList", () => {
         let result = new LinkedList(1);
         result.insert(2, 1);
         result.insert(3, 2);
-        console.log(result);
         let first = new ListNode(1);
         let second = new ListNode(2);
         let third = new ListNode(3);
