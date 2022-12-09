@@ -152,6 +152,25 @@ export class LinkedList {
         return;
     }
 
+    reverse(): void {
+        if (this.isEmpty() || this._size === 1) {
+            return;
+        }
+
+        let previous = this._first;
+        let current = this._first!.next;
+        while (current !== null) {
+            let next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        this._last = this._first;
+        this._last!.next = null;
+        this._first = previous;
+    }
+
     get size(): number {
         return this._size;
     }

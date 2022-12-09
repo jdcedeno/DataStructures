@@ -237,7 +237,31 @@ describe("LinkedList", () => {
         });
     });
 
-    it("returns an array of values corresponding to the nodes in the list", () => {
+    it("the reverse method reverses the linked list in place", () => {
+        let result = new LinkedList(0);
+        result.addLast(1);
+        result.addLast(2);
+        result.addLast(3);
+        result.addLast(4);
+        result.reverse();
+        
+        let first = new ListNode(4);
+        let second = new ListNode(3);
+        let third = new ListNode(2);
+        let fourth = new ListNode(1);
+        let last = new ListNode(0);
+        fourth.next = last;
+        third.next = fourth;
+        second.next = third;
+        first.next = second;
+        expect(result).toMatchObject({
+            _first: first,
+            _last: last,
+            _size: 5
+        });
+    });
+
+    it("the toArray method returns an array of values corresponding to the nodes in the list", () => {
         let myList = new LinkedList(0);
         myList.addLast(1);
         myList.addLast(2);
@@ -245,5 +269,5 @@ describe("LinkedList", () => {
         myList.addLast(4);
         let result = myList.toArray();
         expect(result).toEqual(expect.arrayContaining([0, 1, 2, 3, 4]));
-    })
+    });
 });
