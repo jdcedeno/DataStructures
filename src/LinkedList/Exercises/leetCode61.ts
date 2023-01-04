@@ -94,3 +94,5 @@ let myList = makeList(5);
 printList(myList);
 let result = rotateRight(myList, 24);
 printList(result);
+
+export {};
